@@ -1,0 +1,42 @@
+AllCops:
+  Exclude:
+    - metadata.rb
+    - Rakefile
+    - Guardfile
+    - spec/**/*
+    - test/**/*
+    - .kitchen/*
+    - knife-infoblox.gemspec
+
+Metrics/LineLength:
+  Max: 140
+
+Style/FileName:
+  Description: 'Use snake_case for source file names.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
+  Enabled: false
+
+Style/MethodCallParentheses:
+  Description: 'Do not use parentheses for method calls with no arguments.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-args-no-parens'
+  Enabled: false
+
+BlockNesting:
+  Max: 4
+
+Lint/HandleExceptions:
+  Description: "Don't suppress exception."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 38
+
+Metrics/CyclomaticComplexity:
+  Max: 11
+
+Metrics/MethodLength:
+  Max: 16
+
+Metrics/PerceivedComplexity:
+  Max: 11
