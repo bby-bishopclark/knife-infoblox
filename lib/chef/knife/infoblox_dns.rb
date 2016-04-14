@@ -18,8 +18,9 @@ class InfobloxDns < Chef::Knife::InfobloxBase
 
   def run
     @res = infoblox_connection
+    command = name_args.shift.downcase
 
-    unless valid_args?
+    unless valid_args? command
       show_usage
       exit 1
     end

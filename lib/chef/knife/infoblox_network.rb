@@ -72,7 +72,6 @@ class InfobloxNetwork < Chef::Knife::InfobloxBase
               puts "unable to locate key in extensible attributes - #{config[:retrieve]}"
             end
           end
-          puts ret
         end
       end
     end
