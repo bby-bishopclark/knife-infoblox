@@ -93,13 +93,20 @@ class InfobloxNetwork < Chef::Knife::InfobloxBase
     ::Infoblox::Network.all(@res).each { |net| puts "#{net.remote_attribute_hash.inspect}" }
   end
 
-  def search_by_subnet
-    subnet = name_args.shift
-    ::Infoblox::Network.find(@res, 'network~' => subnet).each do |net|
-      if net.remote_attribute_hash[:network] =~ /#{subnet}/
-        puts "#{net.remote_attribute_hash[:network]} #{net.remote_attribute_hash[:extensible_attributes]}"
-      end
-    end
+  def search_by_subnet 
+    subnet = name_args.shift 
+    ::Infoblox::Network.find(@res, 'network~' => subnet).each do |net| 
+      if net.remote_attribute_hash[:network] =~ /#{subnet}/ 
+        ret = "#{net.remote_attribute_hash[:network]}" 
+        ext_attrs = net.remote_attribute_hash[:extensible_attributes] 
+        if config[:retrieve] 
+          config[:retrieve].split(',').map do |i| 
+            ret << " #{ext_attrs[i]}" 
+          end 
+        end 
+        puts ret 
+      end 
+    end 
   end
 
   def get_next_available(exclude, count)
