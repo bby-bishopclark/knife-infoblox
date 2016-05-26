@@ -3,6 +3,7 @@
 
 require 'chef/knife'
 require 'chef/knife/infoblox_base'
+require 'ipaddr'
 
 # Knife class for interacting with infoblox host records
 class InfobloxHost < Chef::Knife::InfobloxBase

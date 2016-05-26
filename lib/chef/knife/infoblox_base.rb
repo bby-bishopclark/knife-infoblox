@@ -11,8 +11,8 @@ class Chef
     class InfobloxBase < Knife
       deps do
         require 'chef/knife/bootstrap'
-        Chef::Knife::Bootstrap.load_deps
         require 'ipaddr'
+        Chef::Knife::Bootstrap.load_deps
       end
 
       def self.common_options
