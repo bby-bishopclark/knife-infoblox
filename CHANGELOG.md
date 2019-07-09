@@ -1,3 +1,6 @@
+# 0.1.7 - BUGFIX
+Added "require 'ipaddr'" to infoblox_host.rb to address issue "uninitialized constant InfobloxHost::IPAddr (NameError)" when using 'infoblox host create'.
+
 # 0.1.4 - FEATURE
 
 Adds "knife infoblox network" functionality to search for a VLAN, returning subnet and VLAN ID, based on IP.
